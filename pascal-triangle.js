@@ -31,16 +31,15 @@ var generatePascalTriangle = function(numRows) {
   // Create an array list to store the output result...
   let triangleAsArrayOfArrays = [];
   // For generating each row of the triangle...
-  for (currentRow = 0; currentRow < numRows; currentRow++) {
-      triangleAsArrayOfArrays.push(Array(currentRow + 1));       // Initialize the first row of the pascal triangle as {1}...
-      for (column = 0; column < currentRow; column++) {
-
+  for (currentRow = 0; currentRow <= numRows; currentRow++) {  
+    triangleAsArrayOfArrays.push(Array(currentRow + 1));       // Initialize the first row of the pascal triangle as {1}...
+      for (column = 0; column <= currentRow; column++) {
           if (column === 0 || column === currentRow) {
               triangleAsArrayOfArrays[currentRow][column] = 1;
           }
           else {
               // Calculate the elements of a row, add each pair of adjacent elements of the previous row in each step of the inner loop.
-              triangleAsArrayOfArrays[currentRow][column] = triangleAsArrayOfArrays[currentRow - 1][column - 1] + triangleAsArrayOfArrays[currentRow - 1][column - 1];
+              triangleAsArrayOfArrays[currentRow][column] = triangleAsArrayOfArrays[currentRow - 1][column] + triangleAsArrayOfArrays[currentRow - 1][column - 1];
           }
       }
   }

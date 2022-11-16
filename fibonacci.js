@@ -11,7 +11,7 @@ function Fibonacci(n)
     current = sum;
   }
   
-  return current;
+  return n === 0 ? previous : current;
 }
 
 // n0, n1, n2, n3
@@ -25,4 +25,8 @@ Fibonacci(3) = 2 (1 + 1)
 Fibonacci(4) = 3 (1 + 2)
 Fibonacci(5) = 5 (2 + 3)
 */
+console.log(Fibonacci(0));
+console.log(Fibonacci(1));
+console.log(Fibonacci(2));
+console.log(Fibonacci(3));
 console.log(Fibonacci(5));
